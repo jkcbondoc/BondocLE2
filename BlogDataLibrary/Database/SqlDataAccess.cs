@@ -19,7 +19,10 @@ namespace BlogDataLibrary.Database
             _config = config;
         }
 
-        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string connectionStringName, bool isStoredProcedure)
+        public List<T> LoadData<T, U>(string sqlStatement,
+                                      U parameters,
+                                      string connectionStringName,
+                                      bool isStoredProcedure)
         {
             CommandType commandType = CommandType.Text;
             string connectionString = _config.GetConnectionString(connectionStringName);
@@ -36,7 +39,10 @@ namespace BlogDataLibrary.Database
             }
         }
 
-        public void SaveData<T>(string sqlStatement, T parameters, string connectionStringName, bool isStoredProcedure)
+        public void SaveData<T>(string sqlStatement,
+                                T parameters,
+                                string connectionStringName,
+                                bool isStoredProcedure)
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
             CommandType commandType = CommandType.Text;
